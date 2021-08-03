@@ -1,6 +1,6 @@
 {
   "author": "Ulises Freitas<ulises.freitas@gmail.com>",
-  "description": "#EasyFullscreen\nA simple extension to allow you to toggle between windowed and fullscreen in your game.\n\n#Parameters 1: \nKeyboard Text: allow to pick which key you want to use to toggle fullscreen.\n\n# Scene variable: __EasyFullscreen_fullscreen - type(bool)\nUse a bool scene variable to check if the the game is windowed or fullscreen\n* If true: go fullscreen.\n* If false: go windowed.\n\nPreview: https://www.youtube.com/watch?v=_3OYLCOOQs8\nExample: https://github.com/UlisesFreitas/EasyFullscreen-GDevelop-Extension-\n",
+  "description": "# EasyFullscreen\nA simple extension to allow you to toggle between windowed and fullscreen in your game.\n\n# Parameters 1: \nKeyboard Text: allow to pick which key you want to use to toggle fullscreen.\n\n# Scene variable: __EasyFullscreen_fullscreen - type(bool)\nUse a bool scene variable to check if the the game is windowed or fullscreen\n* If true: go fullscreen.\n* If false: go windowed.\n\nPreview: https://www.youtube.com/watch?v=_3OYLCOOQs8\nExample: https://github.com/UlisesFreitas/EasyFullscreen-GDevelop-Extension-\n",
   "extensionNamespace": "",
   "fullName": "EasyFullscreen",
   "helpPath": "",
