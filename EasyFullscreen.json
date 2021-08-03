@@ -1,0 +1,255 @@
+{
+  "author": "Ulises Freitas<ulises.freitas@gmail.com>",
+  "description": "#EasyFullscreen\nA simple extension to allow you to toggle between windowed and fullscreen in your game.\n\n#Parameters 1: \nKeyboard Text: allow to pick which key you want to use to toggle fullscreen.\n\n# Scene variable: __EasyFullscreen_fullscreen - type(bool)\nUse a bool scene variable to check if the the game is windowed or fullscreen\n* If true: go fullscreen.\n* If false: go windowed.\n\nPreview: https://www.youtube.com/watch?v=_3OYLCOOQs8\nExample: https://github.com/UlisesFreitas/EasyFullscreen-GDevelop-Extension-\n",
+  "extensionNamespace": "",
+  "fullName": "EasyFullscreen",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWZ1bGxzY3JlZW4iIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSw1SDEwVjdIN1YxMEg1VjVNMTQsNUgxOVYxMEgxN1Y3SDE0VjVNMTcsMTRIMTlWMTlIMTRWMTdIMTdWMTRNMTAsMTdWMTlINVYxNEg3VjE3SDEwWiIgLz48L3N2Zz4=",
+  "name": "EasyFullscreen",
+  "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/fullscreen.svg",
+  "shortDescription": "Easy way to toggle between windowed and fullscreen mode",
+  "version": "1.0.0",
+  "tags": [
+    "Screen",
+    "fullscreen"
+  ],
+  "dependencies": [],
+  "eventsFunctions": [
+    {
+      "description": "Add a key to make your game go to fullscreen mode",
+      "fullName": "Set the game to fullscreen",
+      "functionType": "Action",
+      "name": "EasyFullscreen",
+      "private": false,
+      "sentence": "Go fullscreen with this key: _PARAM1_ or (default: f)",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "f"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ToggleSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "__EasyFullscreen_fullscreen"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "__EasyFullscreen_fullscreen",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetFullScreen"
+                  },
+                  "parameters": [
+                    "",
+                    "no",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "__EasyFullscreen_fullscreen",
+                    "True"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetFullScreen"
+                  },
+                  "parameters": [
+                    "",
+                    "yes",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "GetArgumentAsString(\"KeyToFullscreen\")"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ToggleSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "__EasyFullscreen_fullscreen"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "__EasyFullscreen_fullscreen",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetFullScreen"
+                  },
+                  "parameters": [
+                    "",
+                    "no",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "__EasyFullscreen_fullscreen",
+                    "True"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetFullScreen"
+                  },
+                  "parameters": [
+                    "",
+                    "yes",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "The key for fullscreen",
+          "longDescription": "",
+          "name": "KeyToFullscreen",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "key"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": []
+}
